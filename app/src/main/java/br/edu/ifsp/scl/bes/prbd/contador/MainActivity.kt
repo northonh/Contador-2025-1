@@ -1,6 +1,8 @@
 package br.edu.ifsp.scl.bes.prbd.contador
 
 import android.os.Bundle
+import android.view.View
+import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import br.edu.ifsp.scl.bes.prbd.contador.databinding.ActivityMainBinding
@@ -17,8 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(activityMainBinding.root)
 
         with (activityMainBinding) {
-            inicialEt.addTextChangedListener {
-                contador = it.toString().toInt()
+            inicialCb.setOnClickListener {
+                contador = (it as CheckBox).text.toString().toInt()
             }
 
             // Usando um lambda para setar o OnClickListener do Button
